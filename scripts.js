@@ -23,6 +23,16 @@ function init () {
       shuttleBackground.style.backgroundColor = "green";
       spaceShuttleHeight.innerHTML = 0;
   });
+
+  let missionAbortButton = document.getElementById("missionAbort");
+  missionAbortButton.addEventListener("click", function () {
+      let response = window.confirm("Confirm that you want to abort the mission.");
+      if (response === true) {
+          flightStatus.innerHTML = "Mission aborted.";
+          shuttleBackground.style.backgroundColor = "green";
+          spaceShuttleHeight.innerHTML = 0;
+      }
+  });
 }
 
 window.onload = init;
